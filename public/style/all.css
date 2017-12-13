@@ -1,0 +1,19 @@
+@import "vendor/reset.css";
+@import "views/header.css";
+@import "views/home.css";
+@import "views/authorization.css";
+@import "views/adminpanel.css";
+@import "views/mark.css";
+@import "views/main.css";
+@import "views/profile.css";
+@import "views/collection.css";
+
+
+/*body {*/
+  /*padding: 50px;*/
+  /*font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;*/
+/*}*/
+
+/*a {*/
+  /*color: #00B7FF;*/
+/*}*/
