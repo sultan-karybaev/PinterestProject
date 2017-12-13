@@ -1,0 +1,62 @@
+<section class="adminpanel-bg">
+    <div class="pinterest--button getback" ui-sref="home" ng-click="vm.getHome()">Get back</div>
+    <div class="adminpanel-header">
+        <div class="change--button" ng-class="vm.addMarkChoose" ng-click="vm.addMarkFunction()">Add mark</div>
+        <div class="change--button" ng-class="vm.allMarksChoose" ng-click="vm.allMarksFunction()">All marks</div>
+    </div>
+
+    <section class="adminpanel-workarea" ng-if="vm.addMarkShow">
+        <section class="adminpanel-form">
+            <div class="authorization-text addmarkError" ng-if="vm.addmarkError">
+                <div>There is an error!</div>
+            </div>
+            <input name="" ng-model="vm.markId" style="display: none">
+            <div class="block--input">
+                <div>
+                    <input class="pinterest--input pinterest--input--white" name="" placeholder="Title"
+                           ng-model="vm.markTitle" type="text" maxlength="100">
+                </div>
+            </div>
+            <div class="block--input adminpanel-form-block-2">
+                <div>
+                    <textarea class="pinterest--input pinterest--input--white textarea-height" name="" placeholder="Description"
+                              ng-model="vm.markDescription" ></textarea>
+                </div>
+            </div>
+
+            <div class="adminpanel-form-block-editmarkImages" ng-if="vm.editMark">
+                <div class="adminpanel-mark-border" ng-repeat="image in vm.editMarkImages" >
+                    <div class="adminpanel-editmarkImage" style="background-image: url('{{image.image}}');">
+                        <div class="adminpanel-deletemarkImage" ng-click="vm.removeMarkImage($index)">Remove</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="block--input">
+                <input class="input-file" id="markImage" type="file" multiple
+                       onchange="angular.element(this).scope().getFileDetails(this)" >
+                <label class="pinterest--button" style="background-color: blueviolet;"
+                       tabindex="0" for="markImage" >Select images</label>
+            </div>
+
+            <div class="block--input">
+                <div><div class="pinterest--button" ng-click="vm.addmarkChecking()" ng-if="vm.addMark">Submit</div></div>
+                <div><div class="pinterest--button" ng-click="vm.addmarkChecking()" ng-if="vm.editMark">Edit</div></div>
+            </div>
+        </section>
+    </section>
+
+    <section class="adminpanel-allmarks" ng-if="vm.allMarksShow">
+        <div class="adminpanel-mark-border" ng-repeat="mark in vm.allMarksArray" >
+            <div class="adminpanel-mark">
+                <div class="adminpanel-mark-image" style="background-image: url('{{mark.image}}'); cursor: pointer;" ui-sref="mark({id: mark._id})" ></div>
+                <div class="adminpanel-mark-title">{{mark.title}}</div>
+                <div class="adminpanel-mark-buttons">
+                    <div class="adminpanel-mark-button" ng-click="vm.allMarksEdit($index)">Edit</div>
+                    <div class="adminpanel-mark-button" ng-click="vm.allMarksRemove($index)">Remove</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</section>

@@ -1,0 +1,69 @@
+<div class="backimage-section"><div class="backdrop-section"></div></div>
+
+<section class="mark-page">
+    <div class="mark-main">
+        <div class="mark-images-block" style="height: {{vm.mark.height}}px">
+            <div class="mark-image" ng-repeat="image in vm.markImages"
+                 style="background-image: url('{{image.image}}');
+                 height: {{image.heightShow}}px; top: {{image.topShow}}px; left: {{image.leftShow}}px; width: {{image.widthShow}}px;" ng-click="vm.currentPin($index)"></div>
+        </div>
+        <div class="mark-title">{{vm.mark.title}}</div>
+        <div class="mark-text">{{vm.mark.text}}</div>
+        <div class="mark-commentBlock">
+            <div class="pinterest--block--input" style="width: 80%;">
+                <span class="error--input" ng-if="vm.addMarkCommentError">Please, enter your comment</span>
+                <input class="pinterest--input pinterest--input--white" name="" placeholder="Your comment!"
+                       ng-model="vm.markComment" type="text">
+            </div>
+            <button class="pinterest--button" ng-click="vm.addMarkCommentChecking()">Comment</button>
+        </div>
+    </div>
+</section>
+
+
+    <div class="interest">
+        <div class="pin mark-comment" ng-repeat="pin in vm.markComments" >
+            <div class="mark-comment-userBlock" ng-click="vm.ProfileOrUser(pin.user._id)">
+                <div class="mark-comment-userBlock-avatar" style="background-image: url('{{pin.user.avatar}}');"></div>
+                <div class="mark-comment-userBlock-name">{{pin.user.firstname}} {{pin.user.lastname}}</div>
+            </div>
+            <div class="pin-text mark-comment-text">{{pin.text}}</div>
+        </div>
+    </div>
+
+
+<section class="modal-interest" ng-show="vm.showModal">
+    <div id="modal-interest-center" class="modal-interest-center">
+        <div class="pin-modal">
+            <div class="pin-modal-main">
+                <div class="pin-modal-main-image"><img src="{{vm.curPin.image}}" style="width: 500px"></div>
+                <div class="pin-modal-main-buttons">
+                    <button class="pinterest--button" ng-click="vm.pinSaveModal(vm.curPin._id)">Save</button>
+                </div>
+            </div>
+            <div class="pin-modal-bottom"></div>
+        </div>
+    </div>
+    <div class="backdrop-interest" ng-click="vm.closePin()"></div>
+</section>
+
+<section class="pinterest-modalwindow" ng-show="vm.showModalsavePin">
+    <div class="home-modal">
+        <div class="home-modal-text"><div>Choose your collection to save the pin!</div></div>
+        <div class="home-modal-collections">
+            <div class="home-modal-collection" ng-repeat="coll in vm.userCollections">
+                <div class="home-modal-collection-block">
+                    <div class="home-modal-collection-block-info">
+                        <div class="home-modal-collection-block-info-image" style="background-image: url('{{coll.image1}}');"></div>
+                        <div class="home-modal-collection-block-info-image" style="background-image: url('{{coll.image2}}');"></div>
+                        <div class="home-modal-collection-block-info-image" style="background-image: url('{{coll.image3}}');"></div>
+                        <div class="home-modal-collection-block-info-image" style="background-image: url('{{coll.image4}}');"></div>
+                        <div>{{coll.title}}</div>
+                    </div>
+                    <button class="pinterest--button" ng-click="vm.pinSave(coll._id)">Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="pinterest-backdropwindow home-backdrop-color" ng-click="vm.showModalsavePin = false;"></div>
+</section>

@@ -1,0 +1,80 @@
+<section id="authorization" class="authorization">
+    <div class="authorization-bg"></div>
+    <div class="authorization-form">
+        <div class="authorization-header">
+            <div class="pinterest--button" ng-click="vm.loginForm = true; vm.signupForm = false; vm.changeForm()"
+                 ng-if="vm.signupForm">Log in</div>
+            <div class="pinterest--button" ng-click="vm.signupForm = true; vm.loginForm = false; vm.changeForm()"
+                 ng-if="vm.loginForm">Sing up</div>
+        </div>
+        <div class="authorization-text">
+            Find new images, make discovers, save favorite ideas with Pinterest!
+        </div>
+
+        <section ng-if="vm.signupForm">
+        <div class="block--input authorization-name">
+            <div><span class="error--input" ng-if="vm.firstnameError">Please, enter first name</span>
+                <input class="pinterest--input" name="" placeholder="First name" ng-class="vm.firstnameClassInput"
+                       ng-model="vm.firstnameInput" type="text" maxlength="100">
+            </div>
+            <div><span class="error--input" ng-if="vm.lastnameError">Please, enter last name</span>
+                <input class="pinterest--input" name="" placeholder="Last name" ng-class="vm.lastnameClassInput"
+                       ng-model="vm.lastnameInput" type="text" maxlength="100">
+            </div>
+        </div>
+        <div class="block--input authorization-sex">
+            <span class="error--input" style="left: 50px" ng-if="vm.choosesexError">Please, choose your sex</span>
+            <div class="change--button" ng-class="vm.male" ng-click="vm.male = 'chosen'; vm.female = 'unchosen';">Male</div>
+            <div class="change--button" ng-class="vm.female" ng-click="vm.female = 'chosen'; vm.male = 'unchosen';">Female</div>
+        </div>
+        <div class="block--input authorization-ageEmailPassword">
+            <div><span class="error--input" ng-if="vm.ageError">Please, enter your age</span>
+                <input class="pinterest--input" name="" placeholder="Age" ng-class="vm.ageClassInput"
+                       ng-model="vm.ageInput" type="number" maxlength="100">
+            </div>
+        </div>
+        <div class="block--input authorization-ageEmailPassword">
+            <div><span class="error--input" ng-if="vm.emailError">Please, enter your e-mail</span>
+                <input class="pinterest--input" name="" placeholder="E-mail" ng-class="vm.emailClassInput"
+                       ng-model="vm.emailInput" type="email" maxlength="100">
+            </div>
+        </div>
+        <div class="block--input authorization-ageEmailPassword">
+            <div><span class="error--input" ng-if="vm.passwordError">Please, enter your password</span>
+                <span class="error--input" ng-if="vm.samepasswordError">Password are not according</span>
+                <input class="pinterest--input" name="" placeholder="Password" ng-class="vm.passwordClassInput"
+                       ng-model="vm.passwordInput" type="password" maxlength="100">
+            </div>
+        </div>
+        <div class="block--input authorization-ageEmailPassword">
+            <div><span class="error--input" ng-if="vm.repeatpasswordError">Please, repeat your password</span>
+                <span class="error--input" ng-if="vm.samepasswordError">Password are not according</span>
+                <input class="pinterest--input" name="" placeholder="Repeat password" ng-class="vm.repeatpasswordClassInput"
+                       ng-model="vm.repeatpasswordInput" type="password" maxlength="100">
+            </div>
+        </div>
+        <div class="block--input authorization-ageEmailPassword">
+            <div><div class="authorization--button" ng-click="vm.inputCkeckingSingup()">Sing up</div></div>
+        </div>
+        </section>
+
+        <!------------------------------------>
+        <section ng-if="vm.loginForm">
+            <div class="block--input authorization-ageEmailPassword">
+                <div><span class="error--input" ng-if="vm.emailLoginError">Please, enter your e-mail</span>
+                    <input class="pinterest--input" name="" placeholder="E-mail" ng-class="vm.emailLoginClassInput"
+                           ng-model="vm.emailLoginInput" type="email" maxlength="100">
+                </div>
+            </div>
+            <div class="block--input authorization-ageEmailPassword">
+                <div><span class="error--input" ng-if="vm.passwordLoginError">Please, enter your password</span>
+                    <input class="pinterest--input" name="" placeholder="Password" ng-class="vm.passwordLoginClassInput"
+                           ng-model="vm.passwordLoginInput" type="password" maxlength="100">
+                </div>
+            </div>
+            <div class="block--input authorization-ageEmailPassword">
+                <div><div class="authorization--button" ng-click="vm.inputCkeckingLogin()">Log in</div></div>
+            </div>
+        </section>
+    </div>
+</section>

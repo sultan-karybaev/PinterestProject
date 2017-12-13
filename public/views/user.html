@@ -1,0 +1,37 @@
+<section class="profile-section">
+    <div class="backimage-section"><div class="backdrop-section"></div></div>
+
+    <div class="profile-userblock">
+        <div class="profile-userdata">
+            <div class="profile-userdata-Left">
+                <div class="profile-username">{{vm.user.firstname}}</div>
+                <div class="profile-username">{{vm.user.lastname}}</div>
+            </div>
+            <div class="profile-userdata-Right">
+                <div class="profile-userAvatar" style="background-image: url('{{vm.user.avatar}}');"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="profile-collectionblock">
+        <div class="profile-collection" ng-repeat="coll in vm.collectionArray" >
+            <div class="profile-collectionLeft" ui-sref="collection({id: coll._id})">
+                <div class="profile-collectionImageBlock">
+                    <div style="top: 0; left: 0; border-top-left-radius: 10px; background-image: url('{{coll.image1}}');"></div>
+                    <div style="top: 0; left: 62px; border-top-right-radius: 10px; background-image: url('{{coll.image2}}');"></div>
+                    <div style="top: 62px; left: 0; border-bottom-left-radius: 10px; background-image: url('{{coll.image3}}');"></div>
+                    <div style="top: 62px; left: 62px; border-bottom-right-radius: 10px; background-image: url('{{coll.image4}}');"></div>
+                </div>
+            </div>
+            <div class="profile-collectionRight">
+                <div class="profile-collectionRight-block">{{coll.title}}</div>
+                <div class="profile-collectionRight-block">{{coll.imagecount}} pins</div>
+                <div class="profile-collectionRight-block3">
+                    <!--<div class="adminpanel-mark-button" ng-click="vm.editCollection($index)">Edit</div>-->
+                    <!--<div class="adminpanel-mark-button" ng-click="vm.removeCollection($index)">Remove</div>-->
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>

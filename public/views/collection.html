@@ -1,0 +1,61 @@
+<section class="profile-section">
+    <div class="backimage-section"><div class="backdrop-section"></div></div>
+
+    <div class="profile-userblock">
+        <div class="profile-userdata">
+            <div class="profile-userdata-Left">
+                <div class="profile-username">{{vm.collection.user.firstname}}</div>
+                <div class="profile-username">{{vm.collection.user.lastname}}</div>
+            </div>
+            <div class="profile-userdata-Right">
+                <div class="profile-userAvatar" style="background-image: url('{{vm.collection.user.avatar}}');"></div>
+            </div>
+        </div>
+    </div>
+
+    <section class="collection-block">
+        <div class="collection-infoBlock">
+            <div class="collection-infoBlock-button">
+                <button class="pinterest--button" ng-click="vm.ProfileOrUser(vm.collection.user._id)">All collections</button>
+            </div>
+            <div class="collection-infoBlock-name">{{vm.collection.title}}</div>
+        </div>
+    </section>
+
+    <section class="interest-section">
+        <div class="interest">
+            <div class="pin" ng-repeat="pin in vm.collectionPins" ng-click="vm.currentPin($index)">
+                <img src="{{pin.image}}" style="width: 250px">
+                <div class="pin-text">{{pin.mark.title}}</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="modal-interest" ng-show="vm.showModal">
+        <div id="modal-interest-center" class="modal-interest-center">
+            <div class="pin-modal">
+                <div class="pin-modal-main">
+                    <div class="pin-modal-main-image"><img src="{{vm.curPin.image}}" style="width: 500px"></div>
+                    <div class="pin-modal-main-buttons">
+                        <div class="pin-modal-main-buttons-mark">
+                            <div>{{vm.curPin.mark.title}}</div>
+                            <div><a target="_blank" ui-sref="mark({id: vm.curPin.mark._id})" style="outline: none; text-decoration: none;">
+                                <button class="pinterest--button" >Visit</button>
+                            </a>
+                            </div>
+                        </div>
+                        <button class="pinterest--button" ng-click="vm.deletePinCollection(vm.curPin._id)">Delete</button>
+                    </div>
+                </div>
+                <div class="pin-modal-bottom"></div>
+            </div>
+        </div>
+        <div class="backdrop-interest" ng-click="vm.closePin()"></div>
+    </section>
+
+
+
+</section>
+
+
+
