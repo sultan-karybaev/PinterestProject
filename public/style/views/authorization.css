@@ -1,0 +1,124 @@
+.authorization{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url("../../images/bg.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+    /*.authorization-bg{*/
+        /*width: 100%;*/
+        /*height: 100%;*/
+        /*background-image: url("../../images/bg.jpg");*/
+        /*background-size: cover;*/
+        /*background-position: center;*/
+        /*background-repeat: no-repeat;*/
+        /*position: fixed;*/
+    /*}*/
+    .authorization-form{
+        width: 400px;
+        background: rgba(0, 0, 0, .6);
+        border-radius: 5px;
+    }
+        .authorization-header{
+            width: 100%;
+            height: 60px;
+            display: flex;
+            justify-content: flex-end;
+            padding-right: 20px;
+            align-items: center;
+            /*border: 1px solid white;*/
+        }
+
+        .authorization-text{
+            width: 100%;
+            padding: 5px 20px;
+            color: white;
+            font-size: 16px;
+            font-weight: 700;
+            text-align: center;
+        }
+        .authorization-name{
+            display: flex;
+            justify-content: space-between;
+        }
+            .authorization-name > div{
+                width: 50%;
+                height: 100%;
+                margin: 0 10px;
+                position: relative;
+            }
+        .authorization-sex{
+            display: flex;
+            justify-content: space-between;
+            position: relative;
+        }
+            .authorization-sex > div{
+                width: 50%;
+                height: 100%;
+                margin: 0 30px;
+
+            }
+            .change--button{
+                width: 100%;
+                max-height: 60px;
+                padding: 10px;
+                font-size: 16px;
+                font-weight: 700;
+                border: 1px solid white;
+                border-radius: 5px;
+                text-align: center;
+                max-width: 200px;
+                cursor: pointer;
+            }
+            .unchosen{
+                color: white;
+                background: rgba(0, 0, 0, 0);
+            }
+            .chosen{
+                color: #2d2d37;
+                background: white;
+            }
+        .authorization-ageEmailPassword{}
+            .authorization-ageEmailPassword > div{
+                width: 100%;
+                height: 100%;
+                padding: 0 10px;
+                position: relative;
+            }
+        .authorization--button{
+            width: 100%;
+            height: 40px;
+            background-color: crimson;
+            color: white;
+            font-size: 16px;
+            font-weight: 700;
+            border-radius: 5px;
+            text-align: center;
+            line-height: 40px;
+            cursor: pointer;
+        }
+
+
+
+
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0; /* <— Apparently some margin are still there even though it's hidden */
+
+}
+
+.block--input{
+    width: 100%;
+    height: 60px;
+    padding: 10px 30px;
+    margin: 10px 0;
+}
+
+

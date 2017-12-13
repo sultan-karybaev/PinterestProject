@@ -1,0 +1,26 @@
+.collection-block{
+    width: 100%;
+}
+    .collection-infoBlock{
+        width: 100%;
+        background: rgba(0, 0, 0, .5);
+        height: 80px;
+        color: white;
+        margin-top: 10px;
+        margin-bottom: 20px;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+        .collection-infoBlock-button{
+            position: absolute;
+            left: 30px;
+        }
+        .collection-infoBlock-name{
+            color: white;
+            font-weight: 700;
+            font-size: 60px;
+            height: 80px;
+            line-height: 80px;
+        }

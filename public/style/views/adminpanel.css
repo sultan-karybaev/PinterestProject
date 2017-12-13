@@ -1,0 +1,159 @@
+.adminpanel-bg{
+    background-color: #333;
+    width: 100%;
+    min-height: 100vh;
+}
+    .getback{
+        position: fixed;
+        top: 10px;
+        left: 10px;
+    }
+    .adminpanel-header{
+        width: 100%;
+        height: 100px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        padding: 0 300px;
+    }
+.adminpanel-workarea{
+    width: 100%;
+    padding-bottom: 100px;
+    display: flex;
+    justify-content: center;
+}
+    .adminpanel-form{
+        width: 800px;
+        background: rgba(0, 0, 0, .5);
+    }
+    .adminpanel-form-block-2{
+        height: auto;
+        /*border: 1px solid white;*/
+    }
+    .textarea-height{
+        height: 200px;
+    }
+    .addmarkError{
+        margin-top: 10px;
+        color: red;
+    }
+.adminpanel-form-block-editmarkImages{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 10px;
+}
+    .adminpanel-editmarkImage{
+        width: 200px;
+        height: 200px;
+        border-radius: 3px;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        padding: 5px;
+    }
+        .adminpanel-deletemarkImage{
+            width: 100%;
+            height: 30px;
+            background-color: rgba(0, 0, 0, .5);
+            color: white;
+            text-align: center;
+            font-size: 14px;
+            font-weight: 700;
+            line-height: 30px;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+    .input-file-container{
+        position: relative;
+        text-align: center;
+        background: #39D2B4;
+        line-height: 30px;
+        font-size: small;
+        transition: all .4s;
+    }
+        .input-file {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%;
+            opacity: 0;
+            padding: 0;
+            display: none;
+            cursor: pointer;
+            border: 1px solid white;
+        }
+        .input-label {
+            width: 100%;
+            height: 100%;
+            cursor: pointer;
+            border: 1px solid white;
+        }
+        .file-return {
+            margin: 0;
+            text-align: center;
+            color: azure;
+            font-style: italic;
+            font-size: .9em;
+            font-weight: bold;
+        }
+        .file-return:not(:empty) {
+            margin: 1em 0;
+        }
+        .file-return:not(:empty):before {
+            content: "Selected file: ";
+            font-style: normal;
+            font-weight: normal;
+        }
+.adminpanel-allmarks{
+    width: 100%;
+    padding-bottom: 100px;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+    .adminpanel-mark-border{
+        padding: 10px;
+        color: white;
+        background-color: rgba(0, 0, 0, .5);
+        border-radius: 3px;
+        margin: 10px;
+    }
+        .adminpanel-mark{
+            width: 200px;
+        }
+            .adminpanel-mark-image{
+                width: 200px;
+                height: 160px;
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
+                border-radius: 3px;
+            }
+            .adminpanel-mark-title{
+                padding: 10px;
+                font-size: 16px;
+                font-weight: 700;
+                text-align: center;
+            }
+            .adminpanel-mark-buttons{
+                display: flex;
+                justify-content: space-between;
+            }
+                .adminpanel-mark-button{
+                    width: 80px;
+                    height: 30px;
+                    color: white;
+                    font-size: 14px;
+                    font-weight: 700;
+                    line-height: 30px;
+                    border: 1px solid white;
+                    border-radius: 3px;
+                    text-align: center;
+                    transition: .3s ease-in-out;
+                    cursor: pointer;
+                }
+                .adminpanel-mark-button:hover {
+                    background-color: white;
+                    color: black;
+                }
