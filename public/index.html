@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="pinterest">
+<head>
+    <meta charset="UTF-8">
+
+    <base href="/">
+    <link rel="shortcut icon" href="favicon.png" type="image/png">
+    <link href="style/all.css" rel="stylesheet">
+    <title id="PinterestTitle"></title>
+</head>
+<body id="body">
+
+<section class="header" ng-controller="HeaderCtrl as vm" ng-if="userSession">
+    <div class="logo" ui-sref="home">
+        <img src="favicon.png" width="40px" height="40px">
+    </div>
+    <div class="search">
+        <div class="search-logo"><img src="images/search.svg" width="20px" height="20px"></div>
+        <input class="search-input" type="text" placeholder="Search" name="">
+    </div>
+    <div class="main-options">
+        <div ui-sref="profile" ng-click="vm.allCollections()">Profile</div>
+        <div ng-click="vm.logout()">Log out</div>
+    </div>
+</section>
+
+<div class="container" ui-view></div>
+
+<script type="text/javascript" src="js/vendor/ng.min.js"></script>
+<script type="text/javascript" src="js/vendor/ng-route.min.js"></script>
+<script type="text/javascript" src="js/vendor/ng-cookies.min.js"></script>
+<script type="text/javascript" src="app.js"></script>
+<script type="text/javascript" src="js/controllers/ctrl.header.js"></script>
+<script type="text/javascript" src="js/views/ctrl.home.js"></script>
+<script type="text/javascript" src="js/views/ctrl.authorization.js"></script>
+<script type="text/javascript" src="js/views/ctrl.adminpanel.js"></script>
+<script type="text/javascript" src="js/views/ctrl.mark.js"></script>
+<script type="text/javascript" src="js/views/ctrl.profile.js"></script>
+<script type="text/javascript" src="js/views/ctrl.user.js"></script>
+<script type="text/javascript" src="js/views/ctrl.collection.js"></script>
+</body>
+</html>
